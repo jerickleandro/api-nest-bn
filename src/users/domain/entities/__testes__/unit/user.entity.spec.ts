@@ -17,26 +17,40 @@ describe('UserEntity unit tests', () => {
     expect(sut.props.createdAt).toBeInstanceOf(Date);
   });
 
-  it('Shoul return name', () => {
+  it('Should return name', () => {
     expect(sut.props.name).toBeDefined();
     expect(sut.props.name).toEqual(props.name);
     expect(typeof sut.props.name).toBe('string');
   });
 
-  it('Shoul return email', () => {
+  it('Should return email', () => {
     expect(sut.props.email).toBeDefined();
     expect(sut.props.email).toEqual(props.email);
     expect(typeof sut.props.email).toBe('string');
   });
 
-  it('Shoul return password', () => {
+  it('Should return password', () => {
     expect(sut.props.password).toBeDefined();
     expect(sut.props.password).toEqual(props.password);
     expect(typeof sut.props.password).toBe('string');
   });
 
-  it('Shoul return createdAt', () => {
+  it('Should return createdAt', () => {
     expect(sut.props.createdAt).toBeDefined();
     expect(sut.props.createdAt).toBeInstanceOf(Date);
+  });
+
+  it('Should set name', () => {
+    const newName = 'Test Name';
+    expect(sut.props.name).not.toEqual(newName);
+    sut.updateName(newName);
+    expect(sut.props.name).toEqual(newName);
+  });
+
+  it('Should set password', () => {
+    const newpassword = 'Test password';
+    expect(sut.props.password).not.toEqual(newpassword);
+    sut.updatePassword(newpassword);
+    expect(sut.props.password).toEqual(newpassword);
   });
 });
