@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { UserDataBuilder } from '../../../testing/helpers/user-data-builder';
 import { UserEntity, UserProps } from '../../user.entity';
 import { EntityValidationError } from '../../../../../shared/domain/erros/validation-error';
@@ -25,7 +26,7 @@ describe('UserEntity integration tests', () => {
 
       props = {
         ...UserDataBuilder({}),
-        name: 'a'.repeat(256),
+        name: 'a'.repeat(256)
       };
       expect(() => new UserEntity(props)).toThrowError(EntityValidationError);
     });
